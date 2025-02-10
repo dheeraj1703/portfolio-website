@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="no-js ss-preload" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Dheeraj Dev - DevOps Engineer</title>
+    <meta name="description" content="Portfolio of Dheeraj Dev, DevOps Engineer">
+    <meta name="author" content="Dheeraj Dev">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body id="top">
+    <div class="s-pagewrap">
+        <header class="s-header">
+            <div class="row wide main-nav-wrap">
+                <nav class="column lg-12 main-nav">
+                    <ul>
+                        <li><a href="index.html" class="home-link">Dheeraj Dev</a></li>
+                        <li class="current"><a href="#intro" class="smoothscroll">Intro</a></li>
+                        <li><a href="#about" class="smoothscroll">About</a></li>
+                        <li><a href="#projects" class="smoothscroll">Projects</a></li>
+                        <li><a href="#contact" class="smoothscroll">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="s-content">
+            <section id="intro" class="s-intro target-section">
+                <div class="row intro-content wide">
+                    <div class="column">
+                        <img src="images/dheeraj.jpg" alt="Dheeraj Dev" class="about-info__pic">
+                        <h1 class="text-huge-title">
+                            Hi, I'm Dheeraj Dev,<br>
+                            a DevOps Engineer <br>
+                            specializing in CI/CD, Infrastructure Automation, <br>
+                            and Cloud Computing.
+                        </h1>
+                    </div>
+                </div>
+            </section>
+            <section id="about" class="s-about target-section">
+                <div class="row about-info wide">
+                    <div class="column lg-12">
+                        <h2 class="text-pretitle">About Me</h2>
+                        <p>
+                            I am a passionate DevOps Engineer with expertise in automation, cloud infrastructure, and continuous deployment. 
+                            With a strong background in Java development, I transitioned into DevOps, gaining proficiency in tools like Jenkins, 
+                            Docker, Kubernetes, Ansible, Terraform, AWS, and monitoring solutions like Prometheus and Grafana.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section id="projects" class="s-works target-section">
+                <div class="row works-portfolio">
+                    <div class="column lg-12">
+                        <h2 class="text-pretitle">Projects</h2>
+                        <ul class="project-list">
+                            <li class="project-item" onclick="showPopup('Finance Me', 'A banking domain microservice project with full CI/CD automation using Jenkins, Docker, Ansible, Terraform, and AWS.')"><span class="project-toggle">▶</span> <strong>Finance Me</strong></li>
+                            <li class="project-item" onclick="showPopup('Vehicle Management System', 'Web-based application for managing vehicle records and bookings.')"><span class="project-toggle">▶</span> <strong>Vehicle Management System</strong></li>
+                            <li class="project-item" onclick="showPopup('Pharmacy Management System', 'A pharmacy system for managing medicine inventory, prescriptions, and sales tracking.')"><span class="project-toggle">▶</span> <strong>Pharmacy Management System</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="s-contact target-section">
+                <div class="row contact-top">
+                    <div class="column lg-12">
+                        <h2 class="text-pretitle">Get In Touch</h2>
+                        <p>Email: dheerajdev17@gmail.com</p>
+                        <p>Phone: +91 9846416440</p>
+                        <p>GitHub: <a href="https://github.com/dheerajdev">github.com/dheerajdev</a></p>
+                        <p>LinkedIn: <a href="https://linkedin.com/in/dheerajdev">linkedin.com/in/dheerajdev</a></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <div id="popup" class="popup-window">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2 id="popup-title"></h2>
+            <p id="popup-text"></p>
+        </div>
+    </div>
+    <script>
+        function showPopup(title, text) {
+            document.getElementById('popup-title').innerText = title;
+            document.getElementById('popup-text').innerText = text;
+            document.getElementById('popup').style.display = 'block';
+        }
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
