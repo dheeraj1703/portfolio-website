@@ -1,97 +1,208 @@
 <!DOCTYPE html>
-<html class="no-js ss-preload" lang="en">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Dheeraj Dev - DevOps Engineer</title>
-    <meta name="description" content="Portfolio of Dheeraj Dev, DevOps Engineer">
-    <meta name="author" content="Dheeraj Dev">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="styles.css">
-    <script src="js/main.js" defer></script>
-</head>
-<body id="top">
-    <div class="s-pagewrap">
-        <header class="s-header">
-            <div class="row wide main-nav-wrap">
-                <nav class="column lg-12 main-nav">
-                    <ul>
-                        <li><a href="index.html" class="home-link">Dheeraj Dev</a></li>
-                        <li class="current"><a href="#intro" class="smoothscroll">Intro</a></li>
-                        <li><a href="#about" class="smoothscroll">About</a></li>
-                        <li><a href="#projects" class="smoothscroll">Projects</a></li>
-                        <li><a href="#contact" class="smoothscroll">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <main class="s-content">
-            <section id="intro" class="s-intro target-section">
-                <div class="row intro-content wide">
-                    <div class="column">
-                        <img src="images/dheeraj.jpg" alt="Dheeraj Dev" class="about-info__pic">
-                        <h1 class="text-huge-title">
-                            Hi, I'm Dheeraj Dev,<br>
-                            a DevOps Engineer <br>
-                            specializing in CI/CD, Infrastructure Automation, <br>
-                            and Cloud Computing.
-                        </h1>
-                    </div>
-                </div>
-            </section>
-            <section id="about" class="s-about target-section">
-                <div class="row about-info wide">
-                    <div class="column lg-12">
-                        <h2 class="text-pretitle">About Me</h2>
-                        <p>
-                            I am a passionate DevOps Engineer with expertise in automation, cloud infrastructure, and continuous deployment. 
-                            With a strong background in Java development, I transitioned into DevOps, gaining proficiency in tools like Jenkins, 
-                            Docker, Kubernetes, Ansible, Terraform, AWS, and monitoring solutions like Prometheus and Grafana.
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <section id="projects" class="s-works target-section">
-                <div class="row works-portfolio">
-                    <div class="column lg-12">
-                        <h2 class="text-pretitle">Projects</h2>
-                        <ul class="project-list">
-                            <li class="project-item" onclick="showPopup('Finance Me', 'A banking domain microservice project with full CI/CD automation using Jenkins, Docker, Ansible, Terraform, and AWS.')"><span class="project-toggle">▶</span> <strong>Finance Me</strong></li>
-                            <li class="project-item" onclick="showPopup('Vehicle Management System', 'Web-based application for managing vehicle records and bookings.')"><span class="project-toggle">▶</span> <strong>Vehicle Management System</strong></li>
-                            <li class="project-item" onclick="showPopup('Pharmacy Management System', 'A pharmacy system for managing medicine inventory, prescriptions, and sales tracking.')"><span class="project-toggle">▶</span> <strong>Pharmacy Management System</strong></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section id="contact" class="s-contact target-section">
-                <div class="row contact-top">
-                    <div class="column lg-12">
-                        <h2 class="text-pretitle">Get In Touch</h2>
-                        <p>Email: dheerajdev17@gmail.com</p>
-                        <p>Phone: +91 9846416440</p>
-                        <p>GitHub: <a href="https://github.com/dheerajdev">github.com/dheerajdev</a></p>
-                        <p>LinkedIn: <a href="https://linkedin.com/in/dheerajdev">linkedin.com/in/dheerajdev</a></p>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
-    <div id="popup" class="popup-window">
-        <div class="popup-content">
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            <h2 id="popup-title"></h2>
-            <p id="popup-text"></p>
-        </div>
-    </div>
-    <script>
-        function showPopup(title, text) {
-            document.getElementById('popup-title').innerText = title;
-            document.getElementById('popup-text').innerText = text;
-            document.getElementById('popup').style.display = 'block';
+    <title>Dheeraj Dev - Software Developer & DevOps Engineer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #2b2b2b);
+            color: #f8f9fa;
         }
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .navbar-brand, .nav-link {
+            color: #ffcc00 !important;
+            font-weight: bold;
+        }
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 0;
+        }
+        .profile-text {
+            max-width: 50%;
+        }
+        .profile-photo {
+            max-width: 350px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 20px rgba(255, 140, 0, 0.5);
+            transition: transform 0.3s ease-in-out;
+        }
+        .project-details {
+            display: none;
+            margin-top: 10px;
+            background: #ffffff;
+            color: #000000;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Dheeraj Dev</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container profile-section">
+        <div class="profile-text">
+            <h1 class="display-4 fw-bold">Dheeraj Dev</h1>
+            <p class="lead">Software Developer | DevOps Engineer | CI/CD | Cloud Computing | Automation</p>
+            <p>Passionate about technology, innovation, and automation. Experienced in building scalable applications and automating workflows.</p>
+            <a href="https://drive.google.com/file/d/1uJ-Z3zUSsisL7a7b44K9kunFJiNLtOfE/view?usp=drive_link" class="btn btn-primary" download>Download Resume</a>
+        </div>
+        <img src="images/dheeraj.jpg" alt="Dheeraj Dev" class="img-fluid profile-photo">
+    </div>
+
+       
+    <!-- Skills Section -->
+    <section id="skills" class="my-5 container">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="row text-center mt-3">
+            <div class="col-md-4"> <strong>Programming:</strong> Java, Python, JavaScript, C++</div>
+            <div class="col-md-4"> <strong>Development:</strong> Spring Boot, React, Node.js, REST APIs</div>
+            <div class="col-md-4"> <strong>DevOps Tools:</strong> Jenkins, Docker, Kubernetes, Terraform, Ansible</div>
+            <div class="col-md-4"> <strong>Cloud:</strong> AWS, Azure, GCP</div>
+            <div class="col-md-4"> <strong>Databases:</strong> MySQL, PostgreSQL</div>
+            <div class="col-md-4"> <strong>Monitoring:</strong> Prometheus, Grafana</div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="my-5 container">
+        <h2 class="section-title">Projects</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-warning text-dark">Finance Me</div>
+                    <div class="card-body">
+                        <p class="card-text text-dark">Built and automated a banking microservice with CI/CD.</p>
+                        <button class="btn btn-outline-warning w-100" onclick="toggleDetails('financeDetails')">More Info</button>
+                        <div id="financeDetails" class="project-details">
+                            <p><strong>Description:</strong> A microservice-based banking application.</p>
+                            <p><strong>Technologies Used:</strong> Jenkins, Docker, AWS, Terraform.</p>
+                            <p><strong>Role:</strong> Developed the CI/CD pipeline and automated deployment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-warning text-dark">Pharmacy Management System</div>
+                    <div class="card-body">
+                        <p class="card-text text-dark">A full-stack pharmacy inventory system.</p>
+                        <button class="btn btn-outline-warning w-100" onclick="toggleDetails('pharmacyDetails')">More Info</button>
+                        <div id="pharmacyDetails" class="project-details">
+                            <p><strong>Description:</strong> Helps pharmacies manage stock and orders.</p>
+                            <p><strong>Technologies Used:</strong> React, Node.js, MySQL.</p>
+                            <p><strong>Role:</strong> Developed the frontend and backend API.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-warning text-dark">Vehicle Management System</div>
+                    <div class="card-body">
+                        <p class="card-text text-dark">A web-based vehicle tracking system.</p>
+                        <button class="btn btn-outline-warning w-100" onclick="toggleDetails('vehicleDetails')">More Info</button>
+                        <div id="vehicleDetails" class="project-details">
+                            <p><strong>Description:</strong> Tracks vehicle movements and service schedules.</p>
+                            <p><strong>Technologies Used:</strong> PHP, MySQL.</p>
+                            <p><strong>Role:</strong> Built the backend and service tracking module.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleDetails(id) {
+            var details = document.getElementById(id);
+            var allDetails = document.querySelectorAll('.project-details');
+            
+            allDetails.forEach(function(detail) {
+                if (detail.id !== id) {
+                    detail.style.display = "none";
+                }
+            });
+            
+            details.style.display = details.style.display === "none" ? "block" : "none";
         }
     </script>
+
+
+        <!-- Experience Section -->
+    <section id="experience" class="my-5 container">
+        <h2 class="section-title">Professional Experience</h2>
+        <p><strong>DevOps Engineer Intern | StarAgile | April 2024 – July 2024</strong></p>
+        <ul>
+            <li>Developed CI/CD pipelines with Jenkins, automating deployments and reducing errors.</li>
+            <li>Managed AWS infrastructure with Terraform, optimizing resource allocation.</li>
+        </ul>
+        <p><strong>Software Developer Intern | Camerinfolks Pvt Ltd | Jan 2023 – April 2023</strong></p>
+        <ul>
+            <li>Developed web applications with Spring Boot, Hibernate, and React.</li>
+            <li>Improved UI/UX for a better user experience.</li>
+        </ul>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="my-5 container">
+        <h2 class="section-title">Certifications</h2>
+        <ul>
+            <li>Certified DevOps Engineer | StarAgile</li>
+            <li>DevOps Fundamentals | IBM</li>
+            <li>Certified Java Programmer | Camerinfolks Pvt Ltd</li>
+        </ul>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="my-5 container">
+        <h2 class="section-title">Education</h2>
+        <ul>
+            <li><strong>Master’s Degree | Computer Application | University of Madras</strong> (2021 - 2023) - 78.9%</li>
+            <li><strong>Bachelor’s Degree | Computer Application | University of Madras</strong> (2018 - 2021) - 72.4%</li>
+            <li><strong>Higher Secondary Certificate | PCMB | GOVT HSS Thokilangadi</strong> (2016 - 2018) - 61%</li>
+            <li><strong>Secondary School Certificate | Rani Jai Higher Secondary School</strong> (2015 - 2016) - 62.4%</li>
+        </ul>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="text-center my-5 container">
+        <h2 class="section-title">Contact</h2>
+        <p>Email: dheerajdev17@gmail.com | Mobile: +91-9846416440</p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/dheeraj-dev" target="_blank">linkedin.com/in/dheeraj-dev</a></p>
+        <p>GitHub: <a href="https://github.com/dheeraj1703" target="_blank">github.com/dheeraj1703</a></p>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="text-center py-3 footer">
+        <p class="mb-0">&copy; 2024 Dheeraj Dev. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
